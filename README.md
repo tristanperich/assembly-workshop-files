@@ -1,6 +1,6 @@
 # Tristan Perich: Introduction to Hardware Programming in Assembly Language
 
-A few development tools are required. Please install the following. Currently only works on Mac OS.
+Here you can install the development tools, and download the code template files for the workshop. There are a few command-line instructions to run from the Terminal app in Mac OS, which install the various tools we will use to program assembly code onto the microchips. Please also download the template code files we will use, at bottom. Currently only works on Mac OS.
 
 
 ## 1. Install Xcode:
