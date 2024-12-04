@@ -10,14 +10,14 @@ Loop:
 	; Turn on pin B4
 	sbi PORTB, 4
 	
-	; Wait (load duration into register and call function)
+	; Wait (load duration into register and call Wait subroutine)
 	ldi r16, 255
 	rcall Wait
 	
 	; Turn off pin B4
 	cbi PORTB, 4
 	
-	; Wait (load duration into register and call function)
+	; Wait (load duration into register and call Wait subroutine)
 	ldi r16, 255
 	rcall Wait
 	
@@ -25,7 +25,7 @@ Loop:
 	rjmp Loop
 
 
-; Wait function
+; Wait subroutine
 Wait:
 	; Load duration for inner loop
 	ldi r17, 255

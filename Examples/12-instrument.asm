@@ -17,14 +17,14 @@ Loop:
 	; Turn on pin B4
 	sbi PORTB, 4
 	
-	; Wait (copy duration into register and call wait function)
+	; Wait (copy duration into register and call Wait subroutine)
 	mov r16, r18
 	rcall Wait
 	
 	; Turn off pin B4
 	cbi PORTB, 4
 	
-	; Wait (copy duration into register and call wait function)
+	; Wait (copy duration into register and call Wait subroutine)
 	mov r16, r18
 	rcall Wait
 	
@@ -32,7 +32,7 @@ Loop:
 	rjmp Loop
 
 
-; Loop until done waiting...
+; Wait subroutine
 Wait:
 	
 	; Decrement the register
