@@ -8,8 +8,8 @@ sbi DDRB, 4
 sbi PORTB, 0
 
 ; Register definitions
-.def r18 = Duration_Reg
-.def r16 = Wait_Reg
+.def Duration_Reg = r18
+.def Wait_Reg = r16
 
 ; Loop forever...
 Loop:
@@ -38,7 +38,6 @@ Loop:
 
 ; Wait subroutine
 Wait:
-	
 	; Decrement the register
 	dec Wait_Reg
 	

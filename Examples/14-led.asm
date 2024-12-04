@@ -1,7 +1,7 @@
 ; Include chip definition
 .include "tn85def.inc"
 
-; Set data-direction of pin B4 to output
+; Set data-direction of pin B3 (LED) and B4 (speaker) to output
 sbi DDRB, 3
 sbi DDRB, 4
 
@@ -9,8 +9,8 @@ sbi DDRB, 4
 sbi PORTB, 0
 
 ; Register definitions
-.def r18 = Duration_Reg
-.def r16 = Wait_Reg
+.def Duration_Reg = r18
+.def Wait_Reg = r16
 
 ; Loop forever...
 Loop:
@@ -37,6 +37,7 @@ Loop:
 	
 	Button_Done:
 	
+	
 	; Turn on pin B4
 	sbi PORTB, 4
 	
@@ -57,7 +58,6 @@ Loop:
 
 ; Wait subroutine
 Wait:
-	
 	; Decrement the register
 	dec Wait_Reg
 	

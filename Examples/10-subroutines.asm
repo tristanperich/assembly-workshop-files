@@ -10,15 +10,13 @@ Loop:
 	; Turn on pin B4
 	sbi PORTB, 4
 	
-	; Wait (load duration into register and call Wait subroutine)
-	ldi r16, 255
+	; Wait
 	rcall Wait
 	
 	; Turn off pin B4
 	cbi PORTB, 4
 	
-	; Wait (load duration into register and call Wait subroutine)
-	ldi r16, 255
+	; Wait
 	rcall Wait
 	
 	; Jump to Loop
@@ -27,10 +25,15 @@ Loop:
 
 ; Wait subroutine
 Wait:
-	; Decrement the register
-	dec r16
+	; Load duration into register
+	ldi r16, 255
 	
-	; If result does not equal 0, branch back to the Wait loop
-	brne Wait
-; Return from function
+	; Loop until done waiting...
+	Wait_Loop:
+		; Decrement the register
+		dec r16
+		
+		; If result does not equal 0, branch back to the Wait loop
+		brne Wait_Loop
+; Return from subroutine
 ret

@@ -18,12 +18,12 @@ Loop:
 		ldi r16, 255
 		
 		; Loop until done waiting...
-		Wait:
+		Wait_Loop:
 			; Decrement the register
 			dec r16
 			
 			; If result does not equal 0, branch back to the Wait loop
-			brne Wait
+			brne Wait_Loop
 	
 	; Jump to Loop
 	rjmp Loop
