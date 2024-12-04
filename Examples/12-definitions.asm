@@ -4,6 +4,10 @@
 ; Set data-direction of pin B4 to output
 sbi DDRB, 4
 
+; Register definitions
+.def r16 = Wait_Reg
+.def r17 = Wait_Reg_2
+
 ; Loop forever...
 Loop:
 
@@ -11,14 +15,14 @@ Loop:
 	sbi PORTB, 4
 	
 	; Wait (load duration into register and call Wait subroutine)
-	ldi r16, 255
+	ldi Wait_Reg, 255
 	rcall Wait
 	
 	; Turn off pin B4
 	cbi PORTB, 4
 	
 	; Wait (load duration into register and call Wait subroutine)
-	ldi r16, 255
+	ldi Wait_Reg, 255
 	rcall Wait
 	
 	; Jump to Loop
@@ -28,13 +32,13 @@ Loop:
 ; Wait subroutine
 Wait:
 	; Load duration for inner loop
-	ldi r17, 255
+	ldi Wait_Reg_2, 255
 	Inner_Wait:
-		dec r17
+		dec Wait_Reg_2
 		brne Inner_Wait
 	
 	; Decrement the register
-	dec r16
+	dec Wait_Reg
 	
 	; If result does not equal 0, branch back to Wait
 	brne Wait

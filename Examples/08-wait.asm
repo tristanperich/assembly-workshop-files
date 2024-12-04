@@ -13,7 +13,7 @@ Loop:
 	; Turn off pin B4
 	cbi PORTB, 4
 	
-	; Wait
+	; Wait (try multiple nop commands)
 	nop
 	
 	; Jump to Loop
