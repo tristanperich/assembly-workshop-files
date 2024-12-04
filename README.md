@@ -1,6 +1,6 @@
 # Tristan Perich: Introduction to Hardware Programming in Assembly Language
 
-A few development tools are required. Please install the following:
+A few development tools are required. Please install the following. Currently only works on Mac OS.
 
 ## 1. Install Xcode:
 Apple's Xcode includes the basic developer tools for the Mac OS.
