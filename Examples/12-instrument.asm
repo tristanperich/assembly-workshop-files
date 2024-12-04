@@ -11,20 +11,20 @@ sbi PORTB, 0
 Loop:
 	; Skip if the button is not pressed
 	sbis PINB, 0
-		; Decrement the duration
+		; The button is pressed, so decrement the duration
 		dec r18
 	
 	; Turn on pin B4
 	sbi PORTB, 4
 	
-	; Wait (copy duration into register and call function)
+	; Wait (copy duration into register and call wait function)
 	mov r16, r18
 	rcall Wait
 	
 	; Turn off pin B4
 	cbi PORTB, 4
 	
-	; Wait (copy duration into register and call function)
+	; Wait (copy duration into register and call wait function)
 	mov r16, r18
 	rcall Wait
 	
