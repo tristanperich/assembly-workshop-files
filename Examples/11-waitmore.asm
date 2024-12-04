@@ -24,7 +24,8 @@ Loop:
 	; Jump to Loop
 	rjmp Loop
 
-; Loop until done waiting...
+
+; Wait function
 Wait:
 	; Load duration for inner loop
 	ldi r17, 255
